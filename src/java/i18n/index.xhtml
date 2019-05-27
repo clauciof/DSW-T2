@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+            <title>#{msg['formsCadastraPromocoes.title']}</title>
+        <h:outputStylesheet library="css" name="estilo.css"/>
+    </h:head>
+    <h:body>
+    <div class="div-header">
+        <h1>#{msg['formsIndex.header']}</h1>
+        <nav>
+          <h:form>  
+          <ul>
+              <li> <h:commandLink action="#{promocaoBean.cadastra()}">#{msg['formsIndex.CadastrarPromocao']}</h:commandLink></li>
+              <li> <h:commandLink action="#{siteBean.cadastra()}">#{msg['formsIndex.CadastrarSite']}</h:commandLink></li>
+              <li> <h:commandLink action="#{teatroBean.cadastra()}">#{msg['formsIndex.CadastrarTeatro']}</h:commandLink></li>
+            <li> <a href="">Login</a></li>
+          </ul>
+          </h:form> 
+        </nav>
+    </div>
+        
+     <div class="layout-body">
+
+     <h:form>
+         <h:commandLink action="#{teatroBean.verTodosTeatros()}">#{msg['formsIndex.VerTeatros']}</h:commandLink><br/>
+            <h:commandLink action="#{promocaoBean.verTodasPromocoes()}">#{msg['formsIndex.VerPromocoes']}</h:commandLink><br/><br/><br/>
+           <!-- <h:commandLink action="#{teatroBean.verTodosTeatros()}">CRUD TEATROS</h:commandLink><br/> 
+            <h:commandLink action="#{siteBean.verTodosSites()}">CRUD SITES</h:commandLink><br/> -->
+            
+            <h:commandLink action="#{teatroBean.apresentaFormsDeleteTeatro()}">#{msg['formsIndex.DeletarTeatro']}</h:commandLink><br/>
+            <h:commandLink action="#{teatroBean.cadastra()}">#{msg['forms.EditarTeatro']}</h:commandLink><br/>
+            <h:commandLink action="#{siteBean.apresentaFormsDelete()}">#{msg['formsIndex.DeletarSite']}</h:commandLink><br/>
+            <h:commandLink action="#{siteBean.cadastra()}">#{msg['formsIndex.EditarSite']}</h:commandLink><br/>
+     </h:form>
+
+       
+    </div>
+        
+    </h:body>
+</html>
+
