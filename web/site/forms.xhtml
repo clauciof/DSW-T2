@@ -21,33 +21,33 @@ and open the template in the editor.
             
             <h:form>
                 
-            <h:panelGrid columns="3">
+            <h:panelGrid columns="1">
                 Email:
-                <h:inputText id="email" label="Nome" required="true" 
-                             value="#{siteBean.site.email}" />
+                <h:inputText id="email" label="Email" required="true" 
+                             value="#{siteBean.site.email}"/>
                 <h:message for="nome"/> <br/>
 
                 Senha: 
-                <h:inputText id="senha" label="E-mail" required="true" 
+                <h:inputText id="senha" label="Senha" required="true" 
                              value="#{siteBean.site.senha}" />
                 <h:message for="email"/> <br/>
 
 
                 URL:
-                <h:inputText id="url" label="Telefone" required="true" 
+                <h:inputText id="url" label="URL" required="true" 
                              value="#{siteBean.site.url}" />
                 <h:message for="telefone"/> <br/>
 
                 Nome:
-                <h:inputText id="nome" label="Telefone" required="true" 
+                <h:inputText id="nome" label="Nome" required="true" 
                              value="#{siteBean.site.nome}" />
-                <h:message for="dataDeNascimento"/> <br/>
+               <br/>
 
 
                 Telefone:
                 <h:inputText id="telefone" label="Telefone" required="true" 
                              value="#{siteBean.site.telefone}" />
-                <h:message for="dataDeNascimento"/> <br/>
+                <br/>
                 
             </h:panelGrid>
             <br/>

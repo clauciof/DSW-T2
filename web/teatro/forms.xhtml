@@ -6,7 +6,8 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
      
     <h:head>
         <title>Sistema de Gerenciamento</title>
@@ -14,43 +15,53 @@ and open the template in the editor.
     </h:head>
     <h:body>
     <div class="layout-body">
-        <h1>Cadastro de Sites</h1>
+        <h1>Cadastro de Teatro</h1>
            <div class="container1">
        
-            <h2><div class="container1head">Adicione Nova Promocao</div></h2>
+            <h2><div class="container1head">Adicione Novo Teatro</div></h2>
             
             <h:form>
                 
-            <h:panelGrid columns="3">
-                Email do Teatro:
+            <h:panelGrid columns="1">
+                Email:<br/>
                 <h:inputText id="email" label="Email" required="true" 
-                             value="#{promocaoBean.promocao.teatro.email}" />
-                <h:message for="nome"/> <br/>
+                             value="#{teatroBean.teatro.email}">
+                 <f:validateRequired/>
+                </h:inputText>
+                <br/>
 
-                URL do Site:
-                <h:inputText id="url" label="URL" required="true" 
-                             value="#{promocaoBean.promocao.site.url}" />
-                <h:message for="telefone"/> <br/>
+                Senha:<br/>
+                <h:inputText id="senha" label="senha" required="true" 
+                             value="#{teatroBean.teatro.senha}" >
+                    <f:validateRequired/>
+                </h:inputText>
+                 <br/>
 
-                Nome da Peça:
+                CNPJ: <br/>
+                <h:inputText id="CNPJ" label="CNPJ" required="true" 
+                             value="#{teatroBean.teatro.cnpj}" >
+                     <f:validateRequired/>
+                </h:inputText>
+                <br/>             
+
+
+                Nome: <br/>
                 <h:inputText id="nome" label="Nome" required="true" 
-                             value="#{promocaoBean.promocao.nome_peca}" />
-                <h:message for="dataDeNascimento"/> <br/>
-
-
-                Data:
-                <h:inputText id="telefone" label="Data" required="true" 
-                             value="#{promocaoBean.promocao.dia_hora}" />
-                <h:message for="dataDeNascimento"/> <br/>
+                             value="#{teatroBean.teatro.nome}" >
+                     <f:validateRequired/>
+                </h:inputText>
+               <br/>  
                 
-                 Preco:
-                <h:inputText id="telefone" label="Preco" required="true" 
-                             value="#{promocaoBean.promocao.preco}" />
-                <h:message for="dataDeNascimento"/> <br/>
+                Cidade:<br/>  
+                <h:inputText id="cidade" label="Cidade" required="true" 
+                             value="#{teatroBean.teatro.cidade}" >
+                     <f:validateRequired/>
+                </h:inputText>
+                <br/>  
                 
             </h:panelGrid>
             <br/>
-            <h:commandButton id="submit" value="Submit" action="#{siteBean.salva()}" />
+            <h:commandButton id="submit" value="Submit" action="#{teatroBean.salva()}" />
             </h:form>
             
             </div>   

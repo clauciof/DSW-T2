@@ -21,28 +21,31 @@ and open the template in the editor.
             
             <h:form>
                 
-            <h:panelGrid columns="3">
+            <h:panelGrid columns="1">
                 
                 URL:
                 <h:inputText id="url" label="Url" required="true" 
-                             value="#{promocaoBean.promocao.url}" />
-                <h:message for="telefone"/> <br/>
+                             value="#{promocaoBean.promocao.url}" >
+                </h:inputText>    
+               
 
                 CNPJ:
-                <h:inputText id="cnpj" label="Nome" required="true" 
-                             value="#{promocaoBean.promocao.cnpj}" />
-                <h:message for="dataDeNascimento"/> <br/>
+                <h:inputText id="cnpj" label="CNPJ" required="true" 
+                             value="#{promocaoBean.promocao.cnpj}" >
+               </h:inputText>     
+                
 
 
                 Nome:
-                <h:inputText id="nome" label="Telefone" required="true" 
-                             value="#{promocaoBean.promocao.nome_peca}" />
-                <h:message for="dataDeNascimento"/> <br/>
+                <h:inputText id="nome" label="Nome" required="true" 
+                             value="#{promocaoBean.promocao.nome_peca}" >
+                </h:inputText>    
+                
                 
                 Preco:
                 <h:inputText id="preco" label="Preco" required="true" 
-                             value="#{promocaoBean.promocao.preco}" />
-                <h:message for="dataDeNascimento"/> <br/>
+                             value="#{promocaoBean.promocao.preco}" >
+                </h:inputText>
                 
                 Data:
                 <h:inputText id="data" label="Data" required="true" 

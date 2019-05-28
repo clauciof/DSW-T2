@@ -30,7 +30,7 @@ public class TeatroBean implements Serializable {
 
     public String cadastra() {
         teatro = new Teatro();
-        return "teatro/forms.xhtml";
+        return "/teatro/forms.xhtml";
     }
 
     public String edita(Integer id) {

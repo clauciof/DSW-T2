@@ -21,7 +21,7 @@ and open the template in the editor.
         <h:form >
             <br/>
             <center>  
-                <h2><h:outputText value="Lista de Sites"/></h2>  
+                <h2><h:outputText value="Lista de Promocoes"/></h2>  
             </center>
             <br/>
             <h:dataTable value="#{promocaoBean.promocoes}" var="promocao"   
@@ -36,13 +36,13 @@ and open the template in the editor.
                     <f:facet  class="thead-teatro" name="header">
                         <h:outputText value="Teatro"  class="thead-teatro-li"/>
                     </f:facet>  
-                    <h:outputText value="#{promocao.teatro.nome}" />  
+                    <h:outputText value="#{promocao.nome_peca}" />  
                 </h:column>  
                 <h:column>  
                      <f:facet  class="thead-teatro" name="header">
                         <h:outputText value="URL"  class="thead-teatro-li"/>
                     </f:facet>   
-                    <h:outputText value="#{promocao.site.url}"/>  
+                    <h:outputText value="#{promocao.url}"/>  
                 </h:column>  
                 <h:column>  
                      <f:facet  class="thead-teatro" name="header">
@@ -54,16 +54,18 @@ and open the template in the editor.
                      <f:facet  class="thead-teatro" name="header">
                         <h:outputText value="Data"  class="thead-teatro-li"/>
                     </f:facet>  
-                    <h:outputText value="#{promocao.dia_hora}"/>  
+                    <h:outputText value="#{promocao.dia_hora}">  
+                        <f:convertDateTime pattern="dd-MM-YYYY HH:MM" />
+                    </h:outputText>
                 </h:column>
                 <!--<h:column>  
                     <f:facet name="header"></f:facet>  
-                    <h:commandButton action = "#{siteBean.edita(site.id)}" value="Editar" class="btn btn-primary">  
+                    <h:commandButton action = "" value="Editar" class="btn btn-primary">  
                     </h:commandButton>  
                 </h:column>  
                 <h:column>  
                     <f:facet name="header"></f:facet>  
-                    <h:commandButton action = "#{siteBean.delete(site)}" value="Deletar" 
+                    <h:commandButton action = "" value="Deletar" 
                                      onclick="return confirm('Gostaria de realmente deletar?');"
                                      class="btn btn-danger">  
                     </h:commandButton>  

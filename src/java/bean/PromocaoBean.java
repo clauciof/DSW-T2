@@ -73,6 +73,6 @@ public class PromocaoBean implements Serializable {
     public Promocao getPromocao() {
         return promocao;
     }
-    
+       
     
 }

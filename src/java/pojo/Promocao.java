@@ -48,7 +48,7 @@ public class Promocao implements Serializable{
     
     @Column(nullable = false, unique=false)
     private String cnpj;
-    private LocalDate dia;
+    //private LocalDate dia;
    
 
     public String getUrl() {return url;}
