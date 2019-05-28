@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Sistema Gerenciamento</title>
+        
+        <h:outputStylesheet library="css" name="estilo.css"/>
+    </h:head>
+    <h:body>
+        <div class="div-header">
+        <h1>Gerenciamento de Sites e Teatros</h1>
+        <nav>
+          <h:form>  
+          <ul>
+              <li> <h:commandLink action="#{promocaoBean.cadastra()}">Cadastrar Promocoao</h:commandLink></li>
+              <li> <h:commandLink action="#{siteBean.cadastra()}">Cadastrar Site</h:commandLink></li>
+              <li> <h:commandLink action="#{teatroBean.cadastra()}">Cadastrar Teatro</h:commandLink></li>
+               
+            <li> <a href="">Login</a></li>
+          </ul>
+          </h:form> 
+        </nav>
+    </div>
+        
+        <h:form> 
+            <ul>
+                <li>
+                    <h:commandLink action="#{teatroBean.lista()}">Teatro: CRUD</h:commandLink>
+                </li>
+                <li>
+                    <h:commandLink action="#{siteBean.lista()}">Site: CRUD</h:commandLink>
+                </li>
+                <li>
+                    <h:commandLink action="#{promocaoBean.lista()}">Promocao: CRUD</h:commandLink>
+                </li>
+            </ul>
+        </h:form>
+    </h:body> 
+</html>
+

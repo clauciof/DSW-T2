@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">  
+    <h:head>  
+      
+        <h:outputStylesheet library="css" name="estilo.css"/>
+    </h:head>  
+    <h:body>  
+        
+    <div class="layout-body">    
+    <div class="container-esquerdo-principal">
+    
+        <h:form >
+            <br/>
+            <center>  
+                <h2><h:outputText value="Lista de Sites"/></h2>  
+            </center>
+            <br/>
+            <h:dataTable value="#{siteBean.sites}" var="site"   
+                       class="table"  >  
+                <h:column >  
+                    <f:facet  class="thead-teatro" name="header">
+                        <h:outputText value="Email"  class="thead-teatro-li"/>
+                    </f:facet>  
+                    <h:outputText value="#{site.email}" />  
+                </h:column>  
+                <h:column>  
+                     <f:facet  class="thead-teatro" name="header">
+                        <h:outputText value="Nome"  class="thead-teatro-li"/>
+                    </f:facet>  
+                    <h:outputText value="#{site.nome}"/>  
+                </h:column>  
+                <h:column>  
+                     <f:facet  class="thead-teatro" name="header">
+                        <h:outputText value="URL"  class="thead-teatro-li"/>
+                    </f:facet>   
+                    <h:outputText value="#{site.url}"/>  
+                </h:column>  
+                <h:column>  
+                     <f:facet  class="thead-teatro" name="header">
+                        <h:outputText value="Telefone"  class="thead-teatro-li"/>
+                    </f:facet>  
+                    <h:outputText value="#{site.telefone}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header"></f:facet>  
+                    <h:commandButton action = "#{siteBean.edita(site.id)}" value="Editar" class="btn btn-primary">  
+                    </h:commandButton>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header"></f:facet>  
+                    <h:commandButton action = "#{siteBean.delete(site)}" value="Deletar" 
+                                     onclick="return confirm('Gostaria de realmente deletar?');"
+                                     class="btn btn-danger">  
+                    </h:commandButton>  
+                </h:column>
+            </h:dataTable>
+            <br/>
+            <center>
+               <!-- <h:commandButton action = ""   
+                                 value="" class="btn btn-primary"></h:commandButton>
+           -->
+               </center>
+            <br/>
+            <center>
+                <h:commandButton action = "#{teatroBean.volta()}"   
+                                 value="Voltar" class="btn btn-success"></h:commandButton>
+            </center>  
+        </h:form>  
+        
+    </div> 
+    </div>    
+    </h:body>
+</html>
