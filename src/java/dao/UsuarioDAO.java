@@ -1,68 +1,62 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
+import pojo.Usuario;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import pojo.Promocao;
 
 /**
  *
- * @author clauc
+ * @author igor
  */
-public class PromocaoDAO extends GenericDAO<Promocao> {
+
+public class UsuarioDAO extends GenericDAO<Usuario>{
     
     @Override
-    public void save(Promocao promocao) {
+    public void save(Usuario usuario) {
         EntityManager em = this.getEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        em.persist(promocao);
+        em.persist(usuario);
         tx.commit();
         em.close();
     }
     
     @Override
-    public List<Promocao> getAll() {
+    public List<Usuario> getAll() {
         EntityManager em = this.getEntityManager();
-        Query q = em.createQuery("select p from Promocao p", Promocao.class);
-        List<Promocao> promocoes = q.getResultList();
+        Query q = em.createQuery("select u from Usuario u", Usuario.class);
+        List<Usuario> usuarios = q.getResultList();
         em.close();
-        return promocoes;
+        return usuarios;
     }
 
     @Override
-    public void delete(Promocao promocao) {
+    public void delete(Usuario usuario) {
         EntityManager em = this.getEntityManager();
         EntityTransaction tx = em.getTransaction();
-        promocao = em.getReference(Promocao.class, promocao.getId());
+        usuario = em.getReference(Usuario.class, usuario.getId());
         tx.begin();
-        em.remove(promocao);
+        em.remove(usuario);
         tx.commit();
     }
     
     @Override
-    public void update(Promocao promocao) {
+    public void update(Usuario usuario) {
         EntityManager em = this.getEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        em.merge(promocao);
+        em.merge(usuario);
         tx.commit();
         em.close();
     }
 
     @Override
-    public Promocao get(Integer id) {
+    public Usuario get(Integer id) {
         EntityManager em = this.getEntityManager();
-        Promocao promocao = em.find(Promocao.class, id);
+        Usuario usuario = em.find(Usuario.class, id);
         em.close();
-        return promocao;
+        return usuario;
     }
-    
-    
 }

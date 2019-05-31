@@ -5,64 +5,63 @@
  */
 package dao;
 
+import pojo.Papel;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import pojo.Promocao;
 
 /**
  *
- * @author clauc
+ * @author Igor
  */
-public class PromocaoDAO extends GenericDAO<Promocao> {
+public class PapelDAO extends GenericDAO<Papel>{
     
     @Override
-    public void save(Promocao promocao) {
+    public void save(Papel papel) {
         EntityManager em = this.getEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        em.persist(promocao);
+        em.persist(papel);
         tx.commit();
         em.close();
     }
     
     @Override
-    public List<Promocao> getAll() {
+    public List<Papel> getAll() {
         EntityManager em = this.getEntityManager();
-        Query q = em.createQuery("select p from Promocao p", Promocao.class);
-        List<Promocao> promocoes = q.getResultList();
+        Query q = em.createQuery("select p from Papel p", Papel.class);
+        List<Papel> papeis = q.getResultList();
         em.close();
-        return promocoes;
+        return papeis;
     }
 
     @Override
-    public void delete(Promocao promocao) {
+    public void delete(Papel papel) {
         EntityManager em = this.getEntityManager();
         EntityTransaction tx = em.getTransaction();
-        promocao = em.getReference(Promocao.class, promocao.getId());
+        papel = em.getReference(Papel.class, papel.getId());
         tx.begin();
-        em.remove(promocao);
+        em.remove(papel);
         tx.commit();
     }
     
     @Override
-    public void update(Promocao promocao) {
+    public void update(Papel papel) {
         EntityManager em = this.getEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        em.merge(promocao);
+        em.merge(papel);
         tx.commit();
         em.close();
     }
 
     @Override
-    public Promocao get(Integer id) {
+    public Papel get(Integer id) {
         EntityManager em = this.getEntityManager();
-        Promocao promocao = em.find(Promocao.class, id);
+        Papel papel = em.find(Papel.class, id);
         em.close();
-        return promocao;
+        return papel;
     }
-    
-    
 }
+

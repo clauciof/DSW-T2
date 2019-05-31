@@ -12,7 +12,8 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author clauc
+ * @author igor
+ * @param <T>
  *
  */
 public abstract class GenericDAO <T> {
