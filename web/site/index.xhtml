@@ -10,8 +10,8 @@ and open the template in the editor.
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">  
     <h:head>  
-      
-        <h:outputStylesheet library="css" name="estilo.css"/>
+      <title>#{msg['formsCadastraPromocoes.title']}</title>
+      <h:outputStylesheet library="css" name="estilo.css"/>
     </h:head>  
     <h:body>  
         
@@ -21,32 +21,32 @@ and open the template in the editor.
         <h:form >
             <br/>
             <center>  
-                <h2><h:outputText value="Lista de Sites"/></h2>  
+                <h2><h:outputText value="#{msg['site.index.lista']}"/></h2>  
             </center>
             <br/>
             <h:dataTable value="#{siteBean.sites}" var="site"   
                        class="table"  >  
                 <h:column >  
                     <f:facet  class="thead-teatro" name="header">
-                        <h:outputText value="Email"  class="thead-teatro-li"/>
+                        <h:outputText value="#{msg['formsCadastraSite.email']}"  class="thead-teatro-li"/>
                     </f:facet>  
                     <h:outputText value="#{site.email}" />  
                 </h:column>  
                 <h:column>  
                      <f:facet  class="thead-teatro" name="header">
-                        <h:outputText value="Nome"  class="thead-teatro-li"/>
+                        <h:outputText value="#{msg['formsCadastraPromocoes.nome']}"  class="thead-teatro-li"/>
                     </f:facet>  
                     <h:outputText value="#{site.nome}"/>  
                 </h:column>  
                 <h:column>  
                      <f:facet  class="thead-teatro" name="header">
-                        <h:outputText value="URL"  class="thead-teatro-li"/>
+                        <h:outputText value="#{msg['formsCadastraPromocoes.url']}"  class="thead-teatro-li"/>
                     </f:facet>   
                     <h:outputText value="#{site.url}"/>  
                 </h:column>  
                 <h:column>  
                      <f:facet  class="thead-teatro" name="header">
-                        <h:outputText value="Telefone"  class="thead-teatro-li"/>
+                        <h:outputText value="#{msg['formsCadastraSite.telefone']}"  class="thead-teatro-li"/>
                     </f:facet>  
                     <h:outputText value="#{site.telefone}"/>  
                 </h:column>  
