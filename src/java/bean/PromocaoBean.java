@@ -28,12 +28,12 @@ public class PromocaoBean implements Serializable {
     private Promocao promocao;
     
     public String lista() {
-        return "promocao/index.xhtml";
+        return "/promocao/index.xhtml";
     }
 
     public String cadastra() {
         promocao = new Promocao();
-        return "promocao/forms.xhtml";
+        return "/promocao/forms.xhtml";
     }
 
     public String edita(Integer id) {
